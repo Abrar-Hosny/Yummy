@@ -6,7 +6,7 @@ export class Useri {
   
   
   
-  displayCards() {
+  displayCards(data) {
     console.log("hello");
     home.innerHTML = ` <div class="card">
           <img src="Where-to-Eat-the-Best-Sushi-in-Seattle.jpg" alt="" class="card-img">
@@ -16,9 +16,6 @@ export class Useri {
     </div>
             </div>`;
   }
-
-
-
 
   displayWithDetails(data) {
     let meals = data.meals ;
