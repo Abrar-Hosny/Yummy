@@ -12,7 +12,9 @@ for(let i = 0  ; i <lists.length ; i++){
     lists[i].addEventListener("click" ,function(e){
         
 type = lists[i].innerHTML.toLowerCase();
-        getData(type);
+      let data =   getData(type);
+      useri.displayCards( data)
+
 
         
     })
@@ -21,13 +23,13 @@ type = lists[i].innerHTML.toLowerCase();
 }
 
 
-async function getData(x){
+async function getData(x="categories"){
     console.log(x)
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?${x[0]}=list`);
     const data = await response.json();
       console.log(data);
+      return data
     
 }
 // details.getData() ;
 
-useri.displayCards()

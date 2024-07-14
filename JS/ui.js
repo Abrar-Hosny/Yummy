@@ -6,17 +6,34 @@ export class Useri {
   
   
   
-  displayCards(data) {
-    console.log("hello");
-    home.innerHTML = ` <div class="card">
-          <img src="Where-to-Eat-the-Best-Sushi-in-Seattle.jpg" alt="" class="card-img">
+  async displayCards(data) {
+    let cartonna = "" ; 
+    let dt = await data;
+    let dtArray = dt.meals ; 
+    console.log(dtArray)
+    
+    for(let x =0 ; x < dtArray.length ; x++){
+      cartonna+=`
+  <div class="row">
+  
+     <div class="card col-lg-3">
+                <img src="Where-to-Eat-the-Best-Sushi-in-Seattle.jpg" alt="" class="card-img"> <!-- Adjust based on your data -->
+                <div class="card-body">
+                    <h1 class="card-title">${dtArray[x].strCategory}</h1> <!-- Display the meal name -->
+                </div>
+            </div>
+  </div>
 
-    <div class="card-body">
-      <h1 class="card-title">Hello</h1>
-    </div>
-            </div>`;
-  }
+            `;
 
+    }
+    console.log(cartonna)
+      
+    home.innerHTML=cartonna ; 
+            
+       
+    }
+    
   displayWithDetails(data) {
     let meals = data.meals ;
 

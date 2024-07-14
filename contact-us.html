@@ -4,52 +4,63 @@
     <meta charset="utf-8">
     <link href="CSS/bootstrap.min.css" rel="stylesheet">
     <link href="CSS/style.css" rel="stylesheet">
+    <link href="CSS/all.min.css" rel="stylesheet">
+    
     <title>Yummy</title>
   </head>
   <body class="bg-black">
-    
-<section class="bg-white vh-100 w-25 position-absolute">
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></button>
-
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-  <div class="offcanvas-header">
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <section class="navbar bg-white vh-100  position-absolute">
+      <i class="fa fa-solid fa-bars fa-2xl mx-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></i>
+  
+  <div class="offcanvas offcanvas-start bg-black" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+  <ul class="d-flex  flex-column  align-items-center list-unstyled ">
+    <li class="btn mt-4 text-white" ><a href="search.html" class="text-decoration-none">Search</a></li >
+      <li class="btn mt-4 text-white">categories</li>
+      <li class="btn mt-4 text-white">Area</li>
+      <li class="btn mt-4 text-white">Ingredients</li>
+      <li class="btn mt-4 text-white">Contact Us</li>
+  </ul>
+  <footer>
+      
+  </footer>
   </div>
-  <div class="offcanvas-body">
-<ul class="d-flex  flex-column  align-items-center list-unstyled ">
-    <li class="mt-4" >Search</li >
-    <li class="mt-4">Categories</li>
-    <li class="mt-4">Area</li>
-    <li class="mt-4">Ingredients</li>
-    <li class="mt-4">Contact Us</li>
-</ul>
-<footer>
+  </div>
+  </section>
     
-</footer>
-</div>
-</div>
-</section>
 
-   <section class="mt-5  pt-5">
+   <section class="pt-5">
    <form >
-   <div class=" d-lg-flex justify-content-lg-center">
-    <div class="mb-3 me-5 ">
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+   <div class=" d-lg-flex mt-5 justify-content-lg-center ">
+    <div class="w-25 form-control bg-black border-0">
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Name">
       </div>
-      <div class="mb-3">
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      <div class="w-25 form-control bg-black border-0">
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Email">
       </div>
    </div>
      
-     <div class="d-lg-flex justify-content-lg-center ">
-        <div class="mb-3 me-5">
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+     <div class="d-lg-flex  justify-content-lg-center  ">
+        <div class="w-25  form-control bg-black border-0">
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Phone">
           </div>
-          <div class="mb-3">
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          <div class="form-control w-25 bg-black border-0">
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Age">
           </div>
      </div>
-<div class="d-flex justify-content-center">
+     
+     <div class="d-lg-flex  justify-content-lg-center  ">
+        <div class="w-25  form-control bg-black border-0">
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Password">
+          </div> 
+          <div class="w-25  form-control bg-black border-0">
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Repassword">
+          </div>
+     </div>
+<div class="d-flex justify-content-center mt-5">
     <button class="btn btn-outline-danger "> Submit</button>
 
 </div>
