@@ -1,6 +1,11 @@
  const home = document.querySelector(".Home");
 
+ let tags ; 
 export class Useri {
+  
+  
+  
+  
   displayCards() {
     console.log("hello");
     home.innerHTML = ` <div class="card">
@@ -12,22 +17,41 @@ export class Useri {
             </div>`;
   }
 
+
+
+
   displayWithDetails(data) {
     let meals = data.meals ;
 
-    const extractMeasurements = (meal) => {
-      return Object.keys(meal)
-        .filter(key => key.startsWith('strMeasure') && meal[key])  // Filter out keys that start with 'strMeasure' and are not empty
-        .map(key => meal[key]);  // Map the filtered keys to their values
-    };
+ 
     
-    const measurementsArray = meals.map(meal => ({
-      idMeal: meal.idMeal,
-      strMeal: meal.strMeal,
-      measurements: extractMeasurements(meal)
+    const ingradiantsandmeassurs = meals.map(meal => ({
+      measurements: meals.map(meal => ({
+        measurements: Object.keys(meal)
+            .filter(key => key.startsWith('strMeasure'))  
+            .map(key => meal[key])                       
+            .filter(value => value && value.trim() !== '') // Filter out null, undefined, and empty strings
+    })),
+      ingridiants :Object.keys(meal).filter(key => key.startsWith('strIngredient')).map(key => meal[key]).filter(value => value && value.trim() !== ''),
+      tags : data.meals[0].strTags.split(',')
     }));
 
-console.log(measurementsArray);
+    const buttonsHTML = ingradiantsandmeassurs.map(
+      meal => meal.tags.map(tag => `<button class="btn btn-success mb-2 me-1">${tag}</button>`).join('')
+    ).join('');
+    const ingradiantsHtml = ingradiantsandmeassurs.map(
+      meal => meal.ingridiants.map(ingridiant => `<button class="btn btn-success mb-2 me-1">${ingridiant}</button>`).join('')
+    ).join('');
+      
+
+    
+    // const buttonsHTML = ingradiantsandmeassurs.map(
+    //   meal => meal.tags.map(tag => `<button class="btn btn-success mb-2 me-1">${tag}</button>`).join('')
+    // ).join('');
+
+
+
+console.log(ingradiantsandmeassurs ,ingradiantsHtml  );
 
 
 
@@ -53,16 +77,15 @@ console.log(measurementsArray);
             </h3>
             
             <div>
-              <button class="btn btn-success">${data.meals[0].strInstructions}</button>
+             ${ingradiantsHtml}
               
             </div>
             <h3 class="fs-1 text-white">Tags:
             </h3>
            
-            <div>
-              <button class="btn btn-danger">${data.meals[0].strTags} </button>
-
-            </div>
+            <div class="tags">
+            ${buttonsHTML}
+           </div>
 
             <div>
               
@@ -74,5 +97,8 @@ console.log(measurementsArray);
           </div>
         </div>
        </section>`
+
+
+
   }
 }
