@@ -57,30 +57,30 @@ console.log(ingradiantsandmeassurs ,ingradiantsHtml  );
 
 
 
-    home.innerHTML=`<section>
-        <div class="d-lg-flex">
-          <div class="w-25 h-100 ">
-            <img src="${data.meals[0].strMealThumb}" class="w-100 object-fit-contain" >
-            <h1 class="fs-1 text-white ">${data.meals[0].strMeal}</h1>
+    home.innerHTML=`<section >
+        <div class="d-lg-flex ms-5 ps-5 pt-2">
+          <div class="w-25 h-25">
+            <img src="${data.meals[0].strMealThumb}" class="w-100 object-fit-contain rounded" >
+            <h1 class="fs-4 text-white ">${data.meals[0].strMeal}</h1>
           </div>
 
           <div class="w-75 px-5">
-            <h3 class="fs-1 text-white">Instructions
+            <h3 class="fs-4 text-white">Instructions
             </h3>
             <p class="text-white">${data.meals[0].strInstructions}</p>
           
-            <h3 class="fs-1 text-white">Area : ${data.meals[0].strArea}
+            <h3 class="fs-5 text-white">Area : ${data.meals[0].strArea}
             </h3>
-             <h3 class="fs-1 text-white"> Category : ${data.meals[0].strCategory}
+             <h3 class="fs-5 text-white"> Category : ${data.meals[0].strCategory}
             </h3>
-             <h3 class="fs-1 text-white"> Recipes :
+             <h3 class="fs-5 text-white"> Recipes :
             </h3>
             
             <div>
              ${ingradiantsHtml}
               
             </div>
-            <h3 class="fs-1 text-white">Tags:
+            <h3 class="fs-5 text-white">Tags:
             </h3>
            
             <div class="tags">
